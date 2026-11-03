@@ -63,7 +63,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - uses: actions/download-artifact@v4   # deploy exactly what was verified
+      - uses: actions/download-artifact@v8   # deploy exactly what was verified
         with:
           name: dist
           path: dist
