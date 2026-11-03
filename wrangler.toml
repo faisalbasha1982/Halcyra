@@ -1,0 +1,19 @@
+name = "halcyra-site"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-06-01"
+
+[vars]
+NOTIFY_TO = "you@example.com"
+NOTIFY_FROM = "Website <leads@example.com>"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "halcyra-leads"
+database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"
+migrations_dir = "migrations"
+
+# Secrets are NOT stored here. Set them once with:
+#   npx wrangler pages secret put TURNSTILE_SECRET --project-name halcyra-site
+#   npx wrangler pages secret put IP_SALT          --project-name halcyra-site
+#   npx wrangler pages secret put RESEND_API_KEY   --project-name halcyra-site
+# For local development, put test values in .dev.vars (git-ignored).

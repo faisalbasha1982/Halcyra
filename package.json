@@ -1,0 +1,24 @@
+{
+  "name": "halcyra-site",
+  "version": "1.0.0",
+  "description": "Company website: static pages + contact API on Cloudflare Pages",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "validate": "html-validate \"dist/**/*.html\"",
+    "dev": "npm run build && wrangler pages dev --port 8788",
+    "db:local": "wrangler d1 migrations apply halcyra-leads --local",
+    "check:live": "node scripts/check-live.mjs"
+  },
+  "devDependencies": {
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@fontsource/ibm-plex-sans-condensed": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "html-validate": "^11.18.0",
+    "wrangler": "^4.156.2"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  }
+}
